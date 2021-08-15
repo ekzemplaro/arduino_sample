@@ -1,1 +1,1 @@
-# arduino_sample
+# arduino_samples
