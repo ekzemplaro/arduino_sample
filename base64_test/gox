@@ -1,8 +1,0 @@
-#
-echo 'ABC' | base64
-echo
-echo 'ABCD' | base64
-echo
-echo 'ABCDEF' | base64
-echo
-echo 'ABCDEFGH' | base64

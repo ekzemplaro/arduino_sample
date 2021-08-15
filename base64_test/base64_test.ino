@@ -2,7 +2,7 @@
 /*
 	base64_test.ino
 
-						Aug/14/2021
+						Aug/15/2021
 */
 // ---------------------------------------------------------------
 #include <Base64.h>
@@ -10,46 +10,48 @@
 // ---------------------------------------------------------------
 void setup()
 {
+  Serial.begin(19200);
 	delay (1000);
-	SerialUSB.println("*** start ***");
+	Serial.println("*** start ***");
 	delay(500);
-	SerialUSB.println("*** Base64 example ***");
+	Serial.println("*** Base64 example ***");
 	delay(500);
 	
 	char Buf[50];
 
-	String str_array[7] = {"AB","ABC","ABCD","ABCDE","ABCDEF","ABCDEFG","AA"};
+	int llx = 8;
+	String str_array[] = {"A","AB","ABC","ABCD","ABCDE","ABCDEF","ABCDEFG",
+		"ABCDEFGH"};
 
-int jt = 0;
-	for (int itt=0; itt<6; itt++)
-		{
- //   int jt = itt;
-		SerialUSB.println("*** aaa *** " + String(jt));
-	
+
+Serial.println ("llx = " + String(llx));
+delay(1000);
+
+ for (int itt=0; itt < llx; itt++)
+ {
 		str_array[itt].toCharArray(Buf, 50);	
-//  		SerialUSB.println(Buf);
 		String str_encoded = encode_proc(Buf);
-		SerialUSB.println(str_encoded);
-		SerialUSB.println("*** ccc ***");
-   jt++;
-   
+		Serial.println(str_encoded);
+
+   delay(300);
 		}
 
 	delay(500);
-	SerialUSB.println("*** setup *** end ***");
+	Serial.println("*** setup *** end ***");
 }
 
 // ---------------------------------------------------------------
+
 String encode_proc(char* input)
 {
-	SerialUSB.println(input);
+	Serial.println(input);
 
-	int inputLen = sizeof(input);
+	int inputLen = strlen(input);
 	
-	int encodedLen = base64_enc_len(inputLen);
+	int encodedLen = Base64.encodedLength(inputLen);
 	char encoded[encodedLen];
 
-	base64_encode(encoded, input, inputLen); 
+	Base64.encode(encoded, input, inputLen); 
 	
 
 	return String(encoded);
@@ -58,7 +60,7 @@ String encode_proc(char* input)
 // ---------------------------------------------------------------
 void loop()
 {
-	SerialUSB.println("*** loop ***");
+	Serial.println("*** loop ***");
 	delay (3000); 
 }
 
