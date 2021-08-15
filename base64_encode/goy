@@ -1,10 +1,10 @@
 #
-echo 'QUIACA==' | base64 -d
+echo 'QUJDREFCQ0RF' | base64 -d
 echo
-echo 'QUJDAA==' | base64 -d
+echo 'QUJDREFCQ0RFRg==' | base64 -d
 echo
-echo 'QUJDRA==' | base64 -d
+echo 'QUJDREFCQ0RFRkc=' | base64 -d
 echo
-echo 'QUJDRA==' | base64 -d
+echo 'QUJDREFCQ0RFRkdI' | base64 -d
 echo
 #

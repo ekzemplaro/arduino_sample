@@ -10,11 +10,11 @@
 // ---------------------------------------------------------------
 void setup()
 {
-  Serial.begin(19200);
+  SerialUSB.begin(19200);
 	delay (1000);
-	Serial.println("*** start ***");
+	SerialUSB.println("*** start ***");
 	delay(500);
-	Serial.println("*** Base64 example ***");
+	SerialUSB.println("*** Base64 example ***");
 	delay(500);
 	
 	char Buf[50];
@@ -24,32 +24,36 @@ void setup()
 		"ABCDEFGH"};
 
 
-Serial.println ("llx = " + String(llx));
+SerialUSB.println ("llx = " + String(llx));
 delay(1000);
 
  for (int itt=0; itt < llx; itt++)
  {
 		str_array[itt].toCharArray(Buf, 50);	
 		String str_encoded = encode_proc(Buf);
-		Serial.println(str_encoded);
+		SerialUSB.println(str_encoded);
 
    delay(300);
+   SerialUSB.println("*** dddd *** itt = " + String(itt));
 		}
 
 	delay(500);
-	Serial.println("*** setup *** end ***");
+	SerialUSB.println("*** setup *** end ***");
 }
 
 // ---------------------------------------------------------------
 
 String encode_proc(char* input)
 {
-	Serial.println(input);
+	SerialUSB.println(input);
 
 	int inputLen = strlen(input);
+ SerialUSB.println("inputLen = " + String(inputLen));
 	
 	int encodedLen = Base64.encodedLength(inputLen);
-	char encoded[encodedLen];
+ SerialUSB.println("encodedLen = " + String(encodedLen));
+//	char encoded[100];
+    char encoded[encodedLen];
 
 	Base64.encode(encoded, input, inputLen); 
 	
@@ -60,7 +64,7 @@ String encode_proc(char* input)
 // ---------------------------------------------------------------
 void loop()
 {
-	Serial.println("*** loop ***");
+	SerialUSB.println("*** loop ***");
 	delay (3000); 
 }
 
