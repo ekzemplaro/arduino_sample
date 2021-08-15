@@ -1,0 +1,3 @@
+https://www.petitmonte.com/robot/howto_adxl345_i2c.html
+
+

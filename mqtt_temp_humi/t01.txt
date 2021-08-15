@@ -1,0 +1,18 @@
+
+
+$ mosquitto_sub -d -t orz -h broker.emqx.io --topic example/testTopic
+Client (null) sending CONNECT
+Client (null) received CONNACK (0)
+Client (null) sending SUBSCRIBE (Mid: 1, Topic: orz, QoS: 0, Options: 0x00)
+Client (null) sending SUBSCRIBE (Mid: 1, Topic: example/testTopic, QoS: 0, Options: 0x00)
+Client (null) received SUBACK
+Subscribed (mid: 1): 0, 0
+Client (null) received PUBLISH (d0, q0, r0, m0, 'example/testTopic', ... (33 bytes))
+{"count":0,"temp":29.7,"humi":63}
+Client (null) received PUBLISH (d0, q0, r0, m0, 'example/testTopic', ... (33 bytes))
+{"count":1,"temp":29.3,"humi":65}
+Client (null) received PUBLISH (d0, q0, r0, m0, 'example/testTopic', ... (33 bytes))
+{"count":2,"temp":29.2,"humi":65}
+Client (null) received PUBLISH (d0, q0, r0, m0, 'example/testTopic', ... (33 bytes))
+{"count":3,"temp":29.2,"humi":65}
+

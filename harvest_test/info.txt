@@ -1,0 +1,14 @@
+
+### Receive.
+14:28:51.264 -> Receive:400 No group ID is specified: 440103199353063
+
+
+400 Bad Request
+
+SIM にグループが設定されていない
+
+
+Receive:400 Configuration for SORACOM Harvest is not found
+
+
+ 現在 SIM は使用中状態です。SIM からセッションが作成されれば通信できます。
